@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export const registerUserService = (request) => {
   const REGISTER_API_ENDPOINT = 'http://localhost:8000/auth/signup';
 
@@ -18,3 +19,17 @@ export const loginUserService = (request) => {
       data: request.user,
     })
   };
+
+
+
+export const getUserDataService = () => {
+  const GETUSERDATA_API_ENDPOINT = 'http://localhost:8000/profile';
+  return axios({
+      baseURL: GETUSERDATA_API_ENDPOINT,
+      method: 'get',    
+    })
+  };
+
+
+
+  

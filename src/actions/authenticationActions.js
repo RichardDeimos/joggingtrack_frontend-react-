@@ -1,4 +1,4 @@
-import * as types from './index';
+import * as types from './constant';
 
 export const registerUserAction = (user) => {
   return {
@@ -13,3 +13,18 @@ export const loginUserAction = (user) => {
     user
   }
 };
+
+export const getUserDataAction = (user) => {
+  return {
+    type: types.GET_USERDATA,
+    user
+  }
+};
+
+export const logOut = () => {
+  return {
+    type: types.LOG_OUT,
+    payload: null,
+  }
+};
+
