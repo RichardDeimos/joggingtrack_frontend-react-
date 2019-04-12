@@ -319,7 +319,7 @@ class DashboardPage extends Component {
                 {records.map((row, index )=> (
                   <TableRow key={row.id}>
                     <TableCell align="center" component="th" scope="row">
-                      {index + 1}
+                      {index + page_size * (page - 1) + 1}
                     </TableCell>
                     <TableCell align="center">{row.date}</TableCell>
                     <TableCell align="center">{row.distance}</TableCell>

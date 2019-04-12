@@ -19,9 +19,12 @@ export default function(state = initialState, action) {
   let response = action.response
   switch(action.type) {
     case types.POST_RECORD_SUCCESS:
+      // console.log( state.page )
       return { 
         ...state, 
         record: response.data, 
+        records: (state.page.count < 5)?[...state.records, response.data]:state.records,
+        page: {count:(state.page.count+1)},
         // records: [...state.records, response.data],
         success: true, 
       };

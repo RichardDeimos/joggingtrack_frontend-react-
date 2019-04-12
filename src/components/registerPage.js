@@ -70,14 +70,14 @@ class RegisterPage extends Component {
 
   render() {
 
-   const { classes } = this.props;
+   const { classes, response } = this.props;
+   console.log(this.props)
    let isSuccess;
-
-    if (this.props.response.register.response) {
-      isSuccess = this.props.response.register.response.error ? false : true; 
+    if ( response.auth.success ) {
+      isSuccess = true;
     }
     return (
-      <main className={classes.main}>
+      <main className={classes.main}> 
        {isSuccess && <Redirect to='login' />}
         <CssBaseline />
         <Paper className={classes.paper}>

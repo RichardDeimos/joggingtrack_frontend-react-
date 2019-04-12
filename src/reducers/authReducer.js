@@ -61,6 +61,7 @@ export default function(state = initialState, action) {
         me: null,
         token: null,
         role: null,
+        success: false,
       }
     default:
       return state;
